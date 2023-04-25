@@ -3,7 +3,7 @@
 /**
  * oktob_string - verification
  * by namezm & bouilla
- * @va: variadic
+ * @var: variadic
  * Return: string
  */
 int oktob_string(va_list var)
