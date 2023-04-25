@@ -9,12 +9,12 @@ int _printf(const char *format, ...);
 int oktob_char(va_list var);
 int oktob_integer(va_list var);
 int oktob_string(va_list var);
-int oktob_to_binary(va_list v);
+int oktob_to_binary(va_list ve;
 /**
  *struct _oktob - Struct
- *@type: type 
+ *@type: type
  *@print: print
-* 
+*
  */
 typedef struct _oktob
 {
