@@ -1,13 +1,14 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
-
+#ifndef MAIN_H
+#define MAIN_H
+#include <stddef.h>
 #include <stdarg.h>
-#include <stdlib.h>
+#include <limits.h>
+#include <unistd.h>
 
 int _printf(const char *format, ...);
-int (*get_print_func(const char *s, int index))(va_list, char *, unsigned int);
-int ev_print_func(const char *s, int index);
-unsigned int handl_str(char *str, char c, unsigned int indexstr);
-int print_str(char *str, unsigned int nbrstr);
+int print_char(va_list va);
+int print_integer(va_list va);
+
+
 
 #endif

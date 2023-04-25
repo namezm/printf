@@ -1,51 +1,56 @@
 #include "main.h"
+
 /**
- *_printf - produces output according to a format
- *By namezm & bouilla
- *@format: character string
- *Return: number of characters printed
- *
+ * specifier_selector - verification
+ * by namezm & bouilla
+ * @format: characters
+ * @va: variadic list
+ * Return: string len
+ */
+int specifier_selector(const char *format, va_list va)
+{
+	printer printers[] = {
+	  {"c", print_char},
+	  {"i", print_integer},
+	  {"d", print_integer},
+	  {NULL, NULL}
+	};
+	int j;
+
+	j = 0;
+	while (printers[j].print != NULL && *format != *(printers[j].type))
+		j++;
+	return (printers[j].print != NULL ? printers[j].print(va) : -1);
+}
+
+/**
+ * _printf - printf function.
+ * by namezm & bouilla
+ * @format: string
+ * Return: str + len.
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0, cp = 0, index_buf = 0;
-	va_list args;
-	int (*function)(va_list, char *, unsigned int);
-	char *str;
+	int i = 0, r, len = 0, condition = 0;
+	va_list va;
+	char c = '%';
 
-	va_start(args, format), str = malloc(sizeof(char) * 1024);
-	if (!format || !str || (format[i] == '%' && !format[i + 1]))
-		return (-1);
-	if (!format[i])
-		return (0);
-	for (i = 0; format && format[i]; i++)
+	va_start(va, format);
+	while (format != NULL && format[i] != '\0')
 	{
-		if (format[i] == '%')
+		if (format[i] == c && condition == 0)
+			condition = 1;
+		else if (condition == 1)
 		{
-			if (format[i + 1] == '\0')
-			{	print_str(str, index_buf), free(str), va_end(args);
-				return (-1);
-			}
-			else
-			{	function = get_print_func(format, i + 1);
-				if (function == NULL)
-				{
-					if (format[i + 1] == ' ' && !format[i + 2])
-						return (-1);
-					handl_str(str, format[i], index_buf), cp++, i--;
-				}
-				else
-				{
-					cp += function(args, str, index_buf);
-					i += ev_print_func(format, i + 1);
-				}
-			} i++;
+			r = specifier_selector(format + i, va);
+			len += r < 0 ? write(1, &c, 1)
+			  + (format[i] == c ? 0 : write(1, format + i, 1)) : r;
+			condition = 0;
 		}
 		else
-			handl_str(str, format[i], index_buf), cp++;
-		for (index_buf = cp; index_buf > 1024; index_buf -= 1024)
-			;
+			len += write(1, format + i, 1);
+		i++;
 	}
-	print_str(str, index_buf), free(str), va_end(args);
-	return (cp);
+	va_end(va);
+	return (format == NULL ? -1 : len);
 }
