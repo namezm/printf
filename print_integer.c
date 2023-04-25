@@ -24,10 +24,10 @@ int to_string(const int n)
 /**
  * print_integer - print numbers
  * by namezm & bouilla
- * @va: variadic
- * Return: string 
+ * @var: variadic
+ * Return: string
  */
-int print_integer(va_list va)
+int print_integer(va_list var)
 {
-	return (to_string(va_arg(va, int)));
+	return (to_string(va_arg(var, int)));
 }

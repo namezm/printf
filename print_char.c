@@ -3,17 +3,17 @@
 /**
  * print_char - check code
  * by namezm & bouilla
- * @va: variadic list
+ * @var: variadic list
  * Return: returns 1
  */
-int print_char(va_list va)
+int print_char(va_list var)
 {
-	int x;
+	int i;
 	char c;
 
-	x = va_arg(va, int);
-	if (x < 0)
-		return (x);
-	c = (char)x;
+	i = va_arg(var, int);
+	if (i < 0)
+		return (i);
+	c = (char)i;
 	return (write(1, &c, 1));
 }

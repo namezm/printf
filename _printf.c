@@ -5,7 +5,7 @@
  * by namezm & bouilla
  * @format: characters
  * @va: variadic list
- * Return: string len
+ * Return: string cp
  */
 int specifier_selector(const char *format, va_list va)
 {
@@ -27,11 +27,11 @@ int specifier_selector(const char *format, va_list va)
  * _printf - printf function.
  * by namezm & bouilla
  * @format: string
- * Return: str + len.
+ * Return: str + cp.
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, r, len = 0, condition = 0;
+	int i = 0, r, cp = 0, condition = 0;
 	va_list va;
 	char c = '%';
 
@@ -43,14 +43,14 @@ int _printf(const char *format, ...)
 		else if (condition == 1)
 		{
 			r = specifier_selector(format + i, va);
-			len += r < 0 ? write(1, &c, 1)
+			cp += r < 0 ? write(1, &c, 1)
 			  + (format[i] == c ? 0 : write(1, format + i, 1)) : r;
 			condition = 0;
 		}
 		else
-			len += write(1, format + i, 1);
+			cp += write(1, format + i, 1);
 		i++;
 	}
 	va_end(va);
-	return (format == NULL ? -1 : len);
+	return (format == NULL ? -1 : cp);
 }
