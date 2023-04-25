@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_char - check code
+ * oktob_char - verification
  * by namezm & bouilla
- * @var: variadic list
+ * @var: variadic
  * Return: returns 1
  */
-int print_char(va_list var)
+int oktob_char(va_list var)
 {
 	int i;
 	char c;

@@ -6,19 +6,18 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-int print_char(va_list var);
-int print_integer(va_list var);
-int print_string(va_list var);
-
+int oktob_char(va_list var);
+int oktob_integer(va_list var);
+int oktob_string(va_list var);
 /**
- *struct _printer - Struct
- *@type: type
- *@print: print
+ *struct _oktob - Struct
+ *@type: type 
+ *@print: print 
  */
-typedef struct _printer
+typedef struct _oktob
 {
 	char *type;
 	int (*print)(va_list);
-} printer;
+} oktob;
 
 #endif

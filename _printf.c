@@ -1,26 +1,27 @@
 #include "main.h"
 
 /**
- * specifier_selector - verification
+ * specifiers_nb - verification
  * by namezm & bouilla
  * @format: characters
- * @va: variadic list
+ * @va: variadic
  * Return: string cp
  */
-int specifier_selector(const char *format, va_list va)
+int specifiers_nb(const char *format, va_list va)
 {
-	printer printers[] = {
-	  {"c", print_char},
-	  {"i", print_integer},
-	  {"d", print_integer},
+	oktob oktobs[] = {
+	  {"c", oktob_char},
+	  {"i", oktob_integer},
+	  {"d", oktob_integer},
+	  {"s", oktob_string},
 	  {NULL, NULL}
 	};
 	int j;
 
 	j = 0;
-	while (printers[j].print != NULL && *format != *(printers[j].type))
+	while (oktobs[j].print != NULL && *format != *(oktobs[j].type))
 		j++;
-	return (printers[j].print != NULL ? printers[j].print(va) : -1);
+	return (oktobs[j].print != NULL ? oktobs[j].print(va) : -1);
 }
 
 /**
@@ -32,17 +33,17 @@ int specifier_selector(const char *format, va_list va)
 int _printf(const char *format, ...)
 {
 	int i = 0, r, cp = 0, condition = 0;
-	va_list va;
+	va_list var;
 	char c = '%';
 
-	va_start(va, format);
+	va_start(var, format);
 	while (format != NULL && format[i] != '\0')
 	{
 		if (format[i] == c && condition == 0)
 			condition = 1;
 		else if (condition == 1)
 		{
-			r = specifier_selector(format + i, va);
+			r = specifiers_nb(format + i, var);
 			cp += r < 0 ? write(1, &c, 1)
 			  + (format[i] == c ? 0 : write(1, format + i, 1)) : r;
 			condition = 0;
@@ -51,6 +52,6 @@ int _printf(const char *format, ...)
 			cp += write(1, format + i, 1);
 		i++;
 	}
-	va_end(va);
+	va_end(var);
 	return (format == NULL ? -1 : cp);
 }
