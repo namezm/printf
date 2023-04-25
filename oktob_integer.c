@@ -4,6 +4,7 @@
  * tostring - integer to dec
  * by namezm & bouilla
  * @n: number
+ *
  * Return: string
  */
 int tostring(const int n)
