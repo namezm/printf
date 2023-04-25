@@ -1,0 +1,21 @@
+#include "main.h"
+
+/**
+ * handl_str - concatenates  characters
+ * By namezm & bouilla
+ * @str: str pointer
+ * @c: charcter to concatenate
+ * @indexstr: index of str 
+ * Return: str index .
+ */
+unsigned int handl_str(char *str, char c, unsigned int indexstr)
+{
+	if (indexstr == 1024)
+	{
+		print_str(str, indexstr);
+		indexstr = 0;
+	}
+	str[indexstr] = c;
+	indexstr++;
+	return (indexstr);
+}
