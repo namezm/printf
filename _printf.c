@@ -3,6 +3,7 @@
 /**
  * specifiers_nb - verification
  * by namezm & bouilla
+ *
  * @format: characters
  * @va: variadic
  * Return: string cp
