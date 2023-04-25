@@ -13,7 +13,8 @@ int oktob_string(va_list var);
 /**
  *struct _oktob - Struct
  *@type: type 
- *@print: print 
+ *@print: print
+* 
  */
 typedef struct _oktob
 {
