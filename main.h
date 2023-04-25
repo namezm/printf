@@ -8,6 +8,8 @@
 int _printf(const char *format, ...);
 int print_char(va_list var);
 int print_integer(va_list var);
+int print_string(va_list var);
+
 /**
  *struct _printer - Struct
  *@type: type
