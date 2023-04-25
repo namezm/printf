@@ -5,10 +5,19 @@
 #include <limits.h>
 #include <unistd.h>
 
-int _printf(const char *format, ...);
-int print_char(va_list va);
-int print_integer(va_list va);
-
-
+int print_char(va_list);
+int print_string(va_list);
+int print_integer(va_list);
+int _printf(const char *, ...);
+/**
+ *struct _printer - Struct
+ *@type: type 
+ *@print: print 
+ */
+typedef struct _printer
+{
+	char *type;
+	int (*print)(va_list);
+} printer;
 
 #endif
