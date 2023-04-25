@@ -3,7 +3,6 @@
 
 #include <stdarg.h>
 #include <stdlib.h>
-#include <ubistd.h>
 
 int _printf(const char *format, ...);
 int (*get_print_func(const char *s, int index))(va_list, char *, unsigned int);
