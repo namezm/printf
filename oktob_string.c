@@ -3,6 +3,7 @@
 /**
  * oktob_string - verification
  * by namezm & bouilla
+ *
  * @var: variadic
  * Return: string
  */
