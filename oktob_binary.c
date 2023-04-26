@@ -11,14 +11,14 @@ int tobinary(unsigned int p)
 	char dig;
 
 	if (p >= 2)
-		return (to_binary(p / 2) + to_binary(p % 2));
+		return (tobinary(p / 2) + tobinary(p % 2));
 	dig = '0' + p;
 	return (write(1, &dig, 1));
 }
 /**
- * oktob_to_binary - print numbers
- * @v: variadic list
- * Return: string length
+ * oktob_to_binary - to binary
+ * @v: variadic
+ * Return: string
  */
 int oktob_to_binary(va_list v)
 {
