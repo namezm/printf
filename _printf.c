@@ -17,6 +17,7 @@ int specifiers_nb(const char *format, va_list va)
 	  {"s", oktob_string},
 	  {"b", oktob_to_binary},
 	  {"u", oktob_unsigned_integer},
+	  {"o", oktob_octal},
 	  {NULL, NULL}
 	};
 	int j;
