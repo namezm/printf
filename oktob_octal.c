@@ -8,5 +8,5 @@
  */
 int oktob_octal(va_list v)
 {
-	return (number_caster(va_arg(v, unsigned int), 8, 0));
+	return (number_cast(va_arg(v, unsigned int), 8, 0));
 }

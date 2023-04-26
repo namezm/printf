@@ -12,6 +12,7 @@ int oktob_string(va_list var);
 int oktob_to_binary(va_list v);
 int oktob_unsigned_integer(va_list);
 int oktob_octal(va_list);
+int number_cast(unsigned int, unsigned int, int);
 /**
  *struct _oktob - Struct
  *@type: type
