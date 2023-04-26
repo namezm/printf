@@ -13,6 +13,8 @@ int oktob_to_binary(va_list v);
 int oktob_unsigned_integer(va_list);
 int oktob_octal(va_list);
 int number_cast(unsigned int, unsigned int, int);
+int oktob_hexadecimal(va_list);
+int oktob_hexadecimal_cap(va_list);
 /**
  *struct _oktob - Struct
  *@type: type
