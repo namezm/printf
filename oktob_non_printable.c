@@ -8,9 +8,9 @@
  */
 int oktob_non_printable(va_list var)
 {
-	int i, co = 0;
+	int i, cp = 0;
 	char *strr = va_arg(var, char *), sefer = '0';
-	unsigned int x;
+	unsigned int xx;
 
 	if (!strr)
 		return (0);
