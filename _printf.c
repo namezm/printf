@@ -23,6 +23,7 @@ int specifiers_nb(const char *format, va_list va)
 	  {"X", oktob_hexadecimal_cap},
 	  {"p", oktob_pointer},
 	  {"R", oktob_rot13},
+	  {"r", oktob_reversed_string},
 	  {NULL, NULL}
 	};
 	int j;
