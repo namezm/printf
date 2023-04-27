@@ -18,6 +18,7 @@ int oktob_hexadecimal_cap(va_list);
 int numero_cast(unsigned int cp, unsigned int to, int ca);
 int oktob_non_printable(va_list var);
 int oktob_pointer(va_list var);
+int oktob_rot13(va_list var);
 /**
  *struct _oktob - Struct
  *@type: type
