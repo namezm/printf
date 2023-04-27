@@ -19,6 +19,7 @@ int specifiers_nb(const char *format, va_list va)
 	  {"u", oktob_unsigned_integer},
 	  {"o", oktob_octal},
 	  {"x", oktob_hexadecimal},
+	  {"S", oktob_non_printable},
 	  {"X", oktob_hexadecimal_cap},
 	  {NULL, NULL}
 	};
