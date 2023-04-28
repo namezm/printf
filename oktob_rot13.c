@@ -2,7 +2,7 @@
 /**
  * rot13_recu - verification
  * by namez & bouilla
- * @s: string
+ * @str: string
  * Return: string
  */
 int rot13_recu(char *str)

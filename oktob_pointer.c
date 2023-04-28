@@ -18,7 +18,7 @@ int l_cast(unsigned long num)
 /**
  * oktob_pointer - verification
  * by namez & bouilla
- * @va: va_list args
+ * @var: va_list args
  * Return: cp
  */
 int oktob_pointer(va_list var)
