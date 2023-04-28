@@ -2,7 +2,7 @@
 
 /**
  * reversed_help - verification
- * @s: string
+ * @str: string
  * Return: string
  */
 int reversed_help(char *str)
@@ -13,8 +13,8 @@ int reversed_help(char *str)
 }
 /**
  * oktob_reversed_string - verification
- * @var: variadic 
- * Return: string 
+ * @var: variadic
+ * Return: string
  */
 int oktob_reversed_string(va_list var)
 {

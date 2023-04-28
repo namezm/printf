@@ -24,7 +24,8 @@ int specifiers_nb(const char *format, va_list va)
 	  {"p", oktob_pointer},
 	  {"R", oktob_rot13},
 	  {"r", oktob_reversed_string},
-	  {NULL, NULL}
+	  {NULL, NULL},
+	  {'\0', NULL},
 	};
 	int j;
 
